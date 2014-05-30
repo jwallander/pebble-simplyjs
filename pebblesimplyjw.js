@@ -8,6 +8,7 @@ simply.on('singleClick', function(e) {
       'lat=' + coords.latitude + '&lon=' + coords.longitude + '&units=metric';
       ajax({ url: weatherUrl, type: 'json' }, function(data) {
         simply.text({ title: data.name, subtitle: data.main.temp });
+      });
     });
   }
 });
