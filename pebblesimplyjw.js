@@ -15,5 +15,6 @@ simply.on('singleClick', function(e) {
 
 simply.setText({
   title: 'Jonas',
-  body: 'Hello World!',
+  subtitle: 'Hello World!',
+  body: 'Down to get temp',
 }, true);
