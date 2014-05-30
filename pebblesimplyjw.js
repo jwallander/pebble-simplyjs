@@ -1,5 +1,3 @@
-console.log('Simply.js demo!');
-
 simply.on('singleClick', function(e) {
   if (e.button === 'down') {
     navigator.geolocation.getCurrentPosition(function(pos) {
@@ -13,12 +11,9 @@ simply.on('singleClick', function(e) {
   }
   if ( e.button === 'up') {
     var batteryChargeState = Pebble.battery_state_service_peek();
-    var charging = batteryChargeState.is_charging === true ? ' and Charging' : ''
-    var plugged = batteryChargeState.is_plugged === true ? 'Plugged in' : 'Unplugged'
-    if ( batteryChargeState.is_plugged ) {
-      Simply.setText({title: 'Battery', subtitle: batteryChargeState.charge_percent, body: plugged + charging})
-    }
-    
+    var charging = (batteryChargeState.is_charging === true ? ' and Charging' : '');
+    var plugged = (batteryChargeState.is_plugged === true ? 'Plugged in' : 'Unplugged');
+    Simply.setText({title: 'Battery', subtitle: batteryChargeState.charge_percent, body: plugged + charging})
   }
 });
 
